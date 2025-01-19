@@ -6,11 +6,9 @@ std::vector<int> f(int n) {
     if (n == 2){
         return std::vector<int>{-1};
     }int i = 2;
-    while (i * i <= n){
-        if (n % i == 0) {
-            int x = n / i;
-            int y = i;
-            return std::vector<int>{y, x};
+    while (i * i <= n){ 
+        if (n % i == 0)  {
+            return std::vector<int>{i, n / i};
         }
         i++;
     }
@@ -33,3 +31,4 @@ int main() {
     }
     return 0;
 }
+
