@@ -11,8 +11,12 @@ std::vector<int> f(int n) {
         if (n % i == 0) {
 =======
     while (i * i <= n){ 
+<<<<<<< HEAD
+        if (n % i ==  0)  {
+=======
         if (n % i == 0)  {
 >>>>>>> edaa3b3c7dd59f889af9d5db447ae82f563b4a18
+>>>>>>> main
             return std::vector<int>{i, n / i};
         }
         i++;
