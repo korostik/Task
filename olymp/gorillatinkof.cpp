@@ -6,8 +6,13 @@ std::vector<int> f(int n) {
     if (n == 2){
         return std::vector<int>{-1};
     }int i = 2;
+<<<<<<< HEAD
     while (i * i <= n){
         if (n % i == 0) {
+=======
+    while (i * i <= n){ 
+        if (n % i == 0)  {
+>>>>>>> edaa3b3c7dd59f889af9d5db447ae82f563b4a18
             return std::vector<int>{i, n / i};
         }
         i++;
