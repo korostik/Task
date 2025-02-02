@@ -7,7 +7,7 @@ std::vector<int> f(int n) {
         return std::vector<int>{-1};
     }int i = 2;
     while (i * i <= n){ 
-        if (n % i == 0)  {
+        if (n % i ==  0)  {
             return std::vector<int>{i, n / i};
         }
         i++;
