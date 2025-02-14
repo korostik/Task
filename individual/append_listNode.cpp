@@ -5,13 +5,12 @@ ListNode* append(ListNode *node, int value){
     Newnode->next = nullptr;
     if (node == nullptr){
         return Newnode;
-    }else{
-        ListNode* temp = node;
-        while (temp->next != nullptr){
-            temp = temp->next;
-        }
-        temp->next = Newnode;
-
     }
+    ListNode* temp = node;
+    while (temp->next != nullptr){
+        temp = temp->next;
+    }
+    temp->next = Newnode;
+
     return node;
 }
