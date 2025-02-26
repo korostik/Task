@@ -14,3 +14,4 @@ ListNode* append(ListNode *node, int value){
 
     return node;
 }
+
