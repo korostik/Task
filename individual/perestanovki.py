@@ -1,9 +1,9 @@
 n = int(input())
 permutation = []
-
+ans = []
 def search():
     if len(permutation) == n:
-        print(" ".join(map(str, permutation)))
+        ans.append(permutation)
     else:
         for i in range(1, n + 1):
             if i in permutation:
@@ -12,4 +12,5 @@ def search():
             search()
             permutation.pop()
 
-search()
+if __name__ == '__main__':
+    search()
