@@ -13,15 +13,9 @@ public:
             if (k == 0){temp = temp->next;}
             else{k = 0;}    
         }
-        if (node != nullptr){
-            if (node->val == val){
-                return node->next;
-            }else{
-                return  node;
-            }
-        }else{
-            return node;
-        }
+        if (node != nullptr)
+            if (node->val == val)return node->next;
+        return node;
         
     }
 };
