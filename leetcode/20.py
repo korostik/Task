@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/valid-parentheses/description/
 class Solution(object):
     def isValid(self, s):
         k = len(s)
@@ -11,6 +12,4 @@ class Solution(object):
             else:
                 k = len(s)
         return True
-        
-        
         
