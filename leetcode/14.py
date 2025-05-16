@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/longest-common-prefix/description/
 class Solution(object):
     def longestCommonPrefix(self, a):
         s = ""
@@ -17,6 +18,3 @@ class Solution(object):
                 else:
                     OK = False
         return s
-
-
-        
