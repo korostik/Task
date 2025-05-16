@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/merge-sorted-array/description/
 #include <algorithm>
 class Binary {
 public:
@@ -25,5 +26,3 @@ public:
         }
     }
 };
-
-
