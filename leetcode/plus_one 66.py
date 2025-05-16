@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/plus-one/description/
 class Solution(object):
     def plusOne(self, a):
         a = int(''.join(map(str, a)))
@@ -7,6 +8,3 @@ class Solution(object):
             ans.append(a % 10)
             a //= 10
         return ans[::-1]
-
-
-        
