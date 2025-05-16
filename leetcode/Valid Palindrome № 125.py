@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/valid-palindrome/description/
 class Solution(object):
     def isPalindrome(self, s):
         ans = ""
@@ -6,7 +7,4 @@ class Solution(object):
             if s[i] in "qwertyuiopasdfghjklzxcvbnm0123456789":
                 ans += s[i]
         return ans == ans[::-1]
-        
-
-
         
