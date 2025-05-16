@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/pascals-triangle/description/
 class Solution(object):
     def generate(self, n):
         a = []
@@ -17,5 +18,3 @@ class Solution(object):
                 if a[i][j] != 1:
                     a[i][j] = a[i - 1][j] + a[i - 1][j - 1]
         return a
-
-        
