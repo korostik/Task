@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/pascals-triangle-ii/description/
 class Solution(object):
     def getRow(self, n):
         a = []
@@ -18,5 +19,3 @@ class Solution(object):
                 if a[i][j] != 1:
                     a[i][j] = a[i - 1][j] + a[i - 1][j - 1]
         return a[n - 1]
-
-        
