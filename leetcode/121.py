@@ -22,5 +22,3 @@ class Solution(object):
         if ind_mini < ind_maxi and i != 0:
             ans = max(ans, a[ind_maxi] - a[ind_mini])
         return ans
-
-
