@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/linked-list-cycle/
+// https://leetcode.com/problems/linked-list-cycle/
 class Solution {
     public:
         bool hasCycle(ListNode *head) {

@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/plus-one/description/
+# https://leetcode.com/problems/plus-one/description/
 class Solution(object):
     def plusOne(self, a):
         a = int(''.join(map(str, a)))

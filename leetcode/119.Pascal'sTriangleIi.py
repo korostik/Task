@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/pascals-triangle-ii/description/
+# https://leetcode.com/problems/pascals-triangle-ii/description/
 class Solution(object):
     def getRow(self, n):
         a = []

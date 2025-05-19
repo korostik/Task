@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/?difficulty=EASY&page=1
+// https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/?difficulty=EASY&page=1
 ListNode* append(ListNode *node, int value){
 
     ListNode* Newnode = new ListNode;

@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/pascals-triangle/description/
+# https://leetcode.com/problems/pascals-triangle/description/
 class Solution(object):
     def generate(self, n):
         a = []
