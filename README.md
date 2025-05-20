@@ -1,2 +1,2 @@
-Task(LeeCode)
+Task(main)
 
