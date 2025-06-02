@@ -14,6 +14,3 @@ ListNode* append(ListNode *node, int value){
 
     return node;
 }
-
-
-//добавление элемента в односвязный список
