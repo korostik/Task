@@ -3,6 +3,7 @@ ListNode* append(ListNode* &node, int value){
     ListNode* Newnode = new ListNode(value);
     if (Newnode == nullptr){
         cout << "Ошибка выделения памяти";
+        return 1;
     }
     if (node == nullptr){
         return Newnode;
