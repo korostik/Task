@@ -1,9 +1,9 @@
-ListNode* append(ListNode* &node, int value){
+ListNode* append(ListNode* &node, int value, bool& flag){
     
     ListNode* Newnode = new ListNode(value);
     if (Newnode == nullptr){
-        cout << "Ошибка выделения памяти";
-        return 1;
+        flag = true;
+        return node;
     }
     if (node == nullptr){
         return Newnode;
