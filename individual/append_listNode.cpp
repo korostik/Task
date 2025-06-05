@@ -1,18 +1,9 @@
-ListNode* append(ListNode* &node, int value, bool& flag){
-    
-    ListNode* Newnode = new ListNode(value);
-    if (Newnode == nullptr){
-        flag = true;
-        return node;
+ListNode* createnode(int value) {
+    ListNode* Newnode = new ListNode();
+    if (!Newnode) {
+        return nullptr;
     }
-    if (node == nullptr){
-        return Newnode;
-    }
-    ListNode* temp = node;
-    while (temp->next != nullptr){
-        temp = temp->next;
-    }
-    temp->next = Newnode;
-
-    return node;
+    Newnode->val = value;
+    newNode->next = nullptr;
+    return Newnode;
 }
