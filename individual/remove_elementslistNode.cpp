@@ -3,6 +3,7 @@ public:
     ListNode* removeElements(ListNode* node, int val) {
         ListNode* temp = node;
         int k;
+        
         while (temp != nullptr) {
             k = 0;
             if (temp->next != nullptr){
