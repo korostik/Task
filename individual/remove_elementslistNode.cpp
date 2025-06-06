@@ -8,13 +8,10 @@ public:
 
         while (temp != nullptr) {
             k = 0;
-            if (temp->next != nullptr){
-                if (temp->next->val == val){
-                    temp->next = temp->next->next;
-                    
-                }else{
-                    temp = temp->next;
-                }
+            if (temp->next != nullptr && temp->next->val == val){
+                temp->next = temp->next->next;
+            }else{
+                temp = temp->next;
             }
         }
         if (node != nullptr)
