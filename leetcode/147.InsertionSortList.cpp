@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/insertion-sort-list/?envType=problem-list-v2&envId=linked-list
 
 
+
 class Solution {
 public:
     int len;
