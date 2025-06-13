@@ -15,6 +15,7 @@ ListNode* append(ListNode* node, int value) {
 }
 
 
+
 class Solution {
 public:
     int len;
