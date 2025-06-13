@@ -23,8 +23,6 @@ public:
         if (len <= 1){
             return node;
         }
-        
-        
         for (int i = 0; i < 2 * len; i++){
             ListNode* temp = node;
             if (temp->val > temp->next->val){
