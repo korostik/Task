@@ -9,4 +9,3 @@ class Solution(object):
                 return i
             count += a[i]
         return -1
-    
