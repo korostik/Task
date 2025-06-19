@@ -13,4 +13,3 @@ class Solution(object):
                 count1 -= 1
             ans = max(ans, count0 + count1)
         return ans
-    
