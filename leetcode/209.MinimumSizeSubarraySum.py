@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/minimum-size-subarray-sum/description/?envType=problem-list-v2&envId=prefix-sum
 
-class Solution(object):            
+class Solution(object):
     def minSubArrayLen(self, x, a):
         left = 0
         right = 0
