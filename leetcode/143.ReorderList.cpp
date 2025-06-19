@@ -1,7 +1,9 @@
 // https://leetcode.com/problems/reorder-list/description/?envType=problem-list-v2&envId=linked-list
 
 ListNode* replace_elements(ListNode* temp1, ListNode* temp2, ListNode* &node){
-    if (temp1 == nullptr || temp2 == nullptr){return node;}
+    if (temp1 == nullptr || temp2 == nullptr){
+        return node;
+    }
     ListNode* first = temp2->next;
     temp2->next = nullptr;
     first->next = temp1->next;
@@ -10,12 +12,13 @@ ListNode* replace_elements(ListNode* temp1, ListNode* temp2, ListNode* &node){
 }
 
 
-
 class Solution{
 public:
     int main_len;
     void reorderList(ListNode* & node) {
-        if (node == nullptr){return;}
+        if (node == nullptr){
+            return;
+        }
         main_len = len_f(node);
         int count;
         ListNode* main_temp = node;
