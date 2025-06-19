@@ -13,6 +13,4 @@ class Solution(object):
                 mini = pre[i]
         if mini == 1000:
             return(1)
-        else:
-            return(abs(mini) + 1)
-        
+        return(abs(mini) + 1)
