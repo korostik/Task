@@ -31,4 +31,3 @@ class Solution:
             else:
                 flag = 0
         return ans + (flag == 0) * 2
-        
