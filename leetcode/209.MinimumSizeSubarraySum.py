@@ -17,6 +17,6 @@ class Solution(object):
                 minilen = min(minilen, right - left + 1)
             right += 1
                 
-        if sum(a) < x:
+        if now_sum < x:
             return 0
         return minilen
