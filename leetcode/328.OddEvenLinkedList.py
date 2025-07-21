@@ -16,9 +16,6 @@ def append(node, value):
         
 
 
-
-
-
 class Solution(object):
     def oddEvenList(self, node):
         if node == None:

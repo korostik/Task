@@ -1,31 +1,19 @@
-// https://leetcode.com/problems/reorder-list/description/?envType=problem-list-v2&envId=linked-list
+// https://leetcode.com/problems/reorder-list/?envType=problem-list-v2&envId=linked-list
 
-ListNode* replace_elements(ListNode* temp1, ListNode* temp2, ListNode* &node){
-    if (temp1 == nullptr || temp2 == nullptr){
-        return node;
-    }
-    ListNode* first = temp2->next;
-    temp2->next = nullptr;
-    first->next = temp1->next;
-    temp1->next = first;
-    return node;
-}
-
-
-class Solution{
+class Solution {
 public:
     int main_len;
     void reorderList(ListNode* & node) {
-        if (node == nullptr){
+        if (node == nullptr) {
             return;
         }
         main_len = len_f(node);
         int count;
         ListNode* main_temp = node;
-        while (main_temp && main_temp->next && main_temp->next->next != nullptr){
+        while (main_temp && main_temp->next && main_temp->next->next) {
             ListNode* temp = node;
             count = 1;
-            while (count != main_len - 1 && temp != nullptr){
+            while (count != main_len - 1 && temp) {
                 temp = temp->next;
                 count++;
             }
@@ -35,13 +23,25 @@ public:
         }
     }
     
-    private:int len_f(ListNode* node){
+private:
+    int len_f(ListNode* node) {
         ListNode* temp = node;
         int len = 0;
-        while (temp != nullptr){
+        while (temp) {
             len += 1;
             temp = temp->next;
         }
         return len;
+    }
+
+    ListNode* replace_elements(ListNode* temp1, ListNode* temp2, ListNode* &node) {
+        if (temp1 == nullptr || temp2 == nullptr) {
+            return node;
+        }
+        ListNode* first = temp2->next;
+        temp2->next = nullptr;
+        first->next = temp1->next;
+        temp1->next = first;
+        return node;
     }
 };
