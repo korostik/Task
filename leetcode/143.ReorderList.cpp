@@ -22,7 +22,6 @@ public:
             main_temp = main_temp->next->next;
         }
     }
-
 private:
     int len_f(ListNode* node) {
         ListNode* temp = node;
