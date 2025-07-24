@@ -7,10 +7,12 @@ class Solution(object):
         for i in range(len(a)):
             k += a[i]
             pre.append(k)
-        mini = 1000
+        mini = a[0]
+        flag = True
         for i in range(len(pre)):
-            if pre[i] < mini and pre[i] < 0:
+            if pre[i] <= mini and pre[i] < 0:
                 mini = pre[i]
-        if mini == 1000:
-            return(1)
+                flag = False
+        if flag:
+            return 1
         return(abs(mini) + 1)
