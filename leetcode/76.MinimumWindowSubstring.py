@@ -15,7 +15,6 @@ class Solution:
             d_work[s[0]] += 1
         count = len(x)
         for i in range(1, len(s)):
-            k = s[i]
             if left == len(s):
                 return ""
             
