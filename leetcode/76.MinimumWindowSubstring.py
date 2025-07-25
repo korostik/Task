@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/minimum-window-substring/description/
+
 class Solution:
     def minWindow(self, s, x):
         d_work = {}
@@ -46,4 +48,3 @@ class Solution:
             if ans == "" or len(s[left:i + 1]) < len(ans):
                 ans = s[left:i + 1]
         return ans
-
