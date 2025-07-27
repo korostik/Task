@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/minimum-size-subarray-sum/description/?envType=problem-list-v2&envId=prefix-sum
+# https://leetcode.com/problems/minimum-size-subarray-sum/description/?envType=problem-list-v2&envId=prefix-sum
 
 class Solution(object):            
     def minSubArrayLen(self, x, a):
