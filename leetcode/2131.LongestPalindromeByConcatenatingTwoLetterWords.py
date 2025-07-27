@@ -5,6 +5,10 @@ class Solution:
         d1 = {} #different sings 1
         d2 = {} #different sings which are reversed
         d3 = {} #same sings
+<<<<<<< HEAD
+=======
+
+>>>>>>> c45bcf2 (update to merge pull request)
         for i in range(len(a)):
             s = a[i]
             if s[0] == s[1]:
