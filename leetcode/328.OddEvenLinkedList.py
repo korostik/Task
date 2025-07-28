@@ -13,7 +13,7 @@ def append(node, value):
         temp = temp.next
     temp.next = new_node
     return node
-        
+
 
 
 class Solution(object):
