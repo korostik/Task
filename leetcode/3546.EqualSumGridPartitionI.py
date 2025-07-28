@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/equal-sum-grid-partition-i/submissions/1682224475/?envType=problem-list-v2&envId=prefix-sum
+# https://leetcode.com/problems/equal-sum-grid-partition-i/submissions/1682224475/?envType=problem-list-v2&envId=prefix-sum
 
 class Solution(object):
     def canPartitionGrid(self, a):
