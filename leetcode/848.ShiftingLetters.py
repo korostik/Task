@@ -8,7 +8,7 @@ class Solution:
         for i in range(len(a)):
             summi += a[i]
             prefix.append(summi % 26)
-        
+
         maxi = prefix[-1]
         j = 0
         ans = ''
