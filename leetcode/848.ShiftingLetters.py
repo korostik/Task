@@ -17,7 +17,7 @@ class Solution:
             j += 1
         return ans
 
-        
+
     def sdvig(self, l, alf, k):
         l = alf[alf.find(l) + k]
         return l
