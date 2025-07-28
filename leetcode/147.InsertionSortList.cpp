@@ -26,7 +26,7 @@ public:
     }
 private:
     ListNode* replace_elements(ListNode* temp, ListNode* &node, int k) {
-        if (k == -1) { 
+        if (k == -1) {
             ListNode* per = temp->next;
             temp->next = temp->next->next;
             ListNode* pocl = temp->next->next;

@@ -21,7 +21,6 @@ class Solution:
             num1 += temp1.val * (10 ** p1)
             p1 += 1
             temp1 = temp1.next
-
         num2 = 0
         p2 = 0
         temp2 = node2
