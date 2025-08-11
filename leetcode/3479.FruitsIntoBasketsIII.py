@@ -1,5 +1,7 @@
 # https://leetcode.com/problems/fruits-into-baskets-iii/description/
 
+import math
+max_number = 10** 9
 class Solution:
     def numOfUnplacedFruits(self, fruits, baskets) -> int:
         len_baskets = len(baskets)
@@ -8,41 +10,44 @@ class Solution:
             baskets[i] = [baskets[i], i]
         baskets.sort()
 
-        ct = 0
-        while 2 ** ct < len_baskets:
-            ct += 1
+        cd = 2 ** math.ceil(math.log(len(baskets), 2)) - len(baskets)
+
         baskets_for_tree = baskets
-        for i in range(2 ** ct - len_baskets):
-            baskets_for_tree = [[-1, 10**9 + 1]] + baskets_for_tree
+        for i in range(cd):
+            baskets_for_tree = [[-1, max_number + 1]] + baskets_for_tree
 
-        ans = 0        
-
+        ans = 0
         tree = self.CreateTree(baskets_for_tree)
+
+        self.baskets = baskets
+        self.tree = tree
+        self.ans = ans
+
         for elem in fruits:
-            tree, ans = self.search(elem, baskets, ans, tree, 2 ** ct - len_baskets)
+            tree, ans = self.search(elem, cd)
         return ans
 
-    def search(self, elem, baskets, ans, tree, left2):
+    def search(self, elem, left2):
         l = 0
-        r = len(baskets) - 1
+        r = len(self.baskets) - 1
         mid = (l + r) // 2
         while l <= r:
-            if baskets[mid][0] == elem:
+            if self.baskets[mid][0] == elem:
                 l = mid
                 break
-            elif baskets[mid][0] < elem:
+            elif self.baskets[mid][0] < elem:
                 l = mid + 1
             else:
                 r = mid - 1
             mid = (l + r) // 2
 
-        if baskets[l:] == []:
-            ans += 1
-            return tree, ans
+        if self.baskets[l:] == []:
+            self.ans += 1
+            return self.tree, self.ans
 
-        tree, ans = self.minRange(l, tree, ans, left2)
+        self.tree, self.ans = self.minRange(l, self.ans, left2)
 
-        return tree, ans
+        return self.tree, self.ans
     
 
     def CreateTree(self, baskets):
@@ -53,13 +58,8 @@ class Solution:
             tree[i] = [tree[i][0], tree[i][1], i]
 
 
-        right = 2 * len(baskets) - 1
-        for i in range(right, 0, -2):
-            if tree[1] != "Empty":
-                break
-            a = tree[i][1]
-            b = tree[i - 1][1]
-            if min(a, b) == a:
+        for i in range(len(tree) - 1, 1, -2):
+            if min(tree[i][1], tree[i - 1][1]) == tree[i][1]:
                 tree[i // 2] = tree[i]
             else:
                 tree[i // 2] = tree[i - 1]
@@ -67,38 +67,40 @@ class Solution:
     
     
     
-    def minRange(self, left, tree, main_ans, left2):
-        left = len(tree) // 2 + left + left2
-        right = len(tree) - 1
+    def minRange(self, left, main_ans, left2):
+        left = len(self.tree) // 2 + left + left2
+        right = len(self.tree) - 1
         del_ind = -1
-        ans = 10**9
+        ans = max_number
         while left <= right:
             if left % 2 != 0:
-                if ans > tree[left][1]:
-                    ans = tree[left][1]
-                    del_ind = tree[left][2]
+                if ans > self.tree[left][1]:
+                    ans = self.tree[left][1]
+                    del_ind = self.tree[left][2]
                 
             if right % 2 == 0:
-                if ans > tree[left][1]:
-                    ans = tree[left][1]
-                    del_ind = tree[right][2]
+                if ans > self.tree[left][1]:
+                    ans = self.tree[left][1]
+                    del_ind = self.tree[right][2]
             
             left = (left + 1) // 2
             right = (right - 1) // 2
         if del_ind  == -1:
-            return tree, main_ans+1
-        tree = self.fixtree(tree, del_ind)
-        return tree, main_ans + (ans == 10 ** 9)
+            return self.tree, main_ans+1
+        self.tree = self.fixtree(self.tree, del_ind)
+        return self.tree, main_ans + (ans == max_number)
     
     def fixtree(self, tree, del_ind):
-        tree[del_ind][1] =  10**9 + 1
+        tree[del_ind][1] =  max_number + 1
         tek =  del_ind // 2
         while tek > 0:
-            a = tree[tek * 2]
-            b = tree[tek * 2 + 1]
-            if a[1] < b[1]:
-                tree[tek] = a
+            if tree[tek * 2][1] < tree[tek * 2 + 1][1]:
+                tree[tek] = tree[tek * 2]
             else:
-                tree[tek] = b
+                tree[tek] = tree[tek * 2 + 1]
             tek //= 2
         return tree
+
+
+obj = Solution()
+print(obj.numOfUnplacedFruits([4, 2, 5], [3, 5, 4]))
