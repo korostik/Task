@@ -100,7 +100,3 @@ class Solution:
                 tree[tek] = tree[tek * 2 + 1]
             tek //= 2
         return tree
-
-
-obj = Solution()
-print(obj.numOfUnplacedFruits([4, 2, 5], [3, 5, 4]))
