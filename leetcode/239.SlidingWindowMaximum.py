@@ -32,6 +32,3 @@ class Solution:
             left = (left + 1) // 2
             right = (right - 1) // 2
         return ans
-
-obj = Solution()
-print(obj.maxSlidingWindow([1, 2, 3, 4, 5], 3))
