@@ -3,6 +3,7 @@
 import math
 class Solution:
     def maxSlidingWindow(self, a: list[int], k) -> list[int]:
+        # TODO: We must delete some unnecessary numbers from this list, and that's why our program decreases their work time.
         cd = 2 ** math.ceil(math.log(len(a), 2)) - len(a)
         a_for_tree = a.copy()
         for i in range(cd):
