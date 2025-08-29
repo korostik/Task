@@ -32,7 +32,7 @@ class NumArray:
             right = (right - 1) // 2
         return ans
 
-    def CreateTree(self):
+    def create_tree(self):
         tree = ["Empty"] * len(self.nums) + self.nums
 
         right = 2 * len(self.nums) - 1
