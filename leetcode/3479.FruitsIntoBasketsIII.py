@@ -24,7 +24,10 @@ class Solution:
         self.ans = ans
 
         for elem in fruits:
+            # TODO: we have some understandable problems
             tree, ans = self.search(elem, cd)
+
+        # TODO: The ans is one more
         return ans
 
     def search(self, elem, left2):
