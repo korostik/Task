@@ -11,7 +11,7 @@ class NumArray:
         self.len_nums2 = len(nums)
         self.ind_nach = 2 ** i - k
         self.nums = nums
-        self.tree = self.CreateTree()
+        self.tree = self.create_tree()
 
     def update(self, index, val):
         self.fixtree(self.tree, index, val)
