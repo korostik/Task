@@ -1,36 +1,38 @@
-#https://leetcode.com/problems/range-product-queries-of-powers/description/?envType=daily-question&envId=2025-08-11
+# https://leetcode.com/problems/range-product-queries-of-powers/description/
 
 import math
+
 max_number = 10**9 + 7
+
+
 class Solution:
-    def productQueries(self, n: int, x):
-        product = self.CreateProduct(n)
+    def productQueries(self, n: int, queries):
+        product = self.create_product(n)
         cd = 2 ** math.ceil(math.log(len(product), 2)) - len(product)
         for i in range(cd):
             product.insert(0, 1)
 
-        tree = self.CreateTree(product)
+        tree = self.create_tree(product)
         ans = []
-        for i in range(len(x)):
-            ans.append(self.proizRange(tree, x[i][0], x[i][1], cd))
+        for i in range(len(queries)):
+            ans.append(self.product_range(tree, queries[i][0], queries[i][1], cd))
         return ans
 
-    def proizRange(self, tree, l, r, cd):
-        left = len(tree) // 2 + l + cd
-        right = len(tree) // 2 + r + cd
+    def product_range(self, tree, left, right, cd):
+        left_index = len(tree) // 2 + left + cd
+        right_index = len(tree) // 2 + right + cd
         ans = 1
-        while left <= right:
-            if left % 2 != 0:
-                ans *= tree[left]
-            if right % 2 == 0:
-                ans *= tree[right]
+        while left_index <= right_index:
+            if left_index % 2 != 0:
+                ans *= tree[left_index]
+            if right_index % 2 == 0:
+                ans *= tree[right_index]
             
-            left = (left + 1) // 2
-            right = (right - 1) // 2
+            left_index = (left_index + 1) // 2
+            right_index = (right_index - 1) // 2
         return ans % max_number
 
-
-    def CreateProduct(self, n):
+    def create_product(self, n):
         product = []
         maxct = 2 ** int(math.log(n, 2))
 
@@ -42,7 +44,7 @@ class Solution:
 
         return product[::-1]
     
-    def CreateTree(self, product):
+    def create_tree(self, product):
         tree = ["Empty"] * len(product) + product
         for i in range(len(tree) - 1, 1, -2):
             tree[i // 2] = tree[i] * tree[i - 1]
