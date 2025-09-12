@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/range-sum-query-mutable/description/?envType=problem-list-v2&envId=segment-tree
 
+
 class NumArray:
     def __init__(self, nums):
         self.len_nums = len(nums)
@@ -14,10 +15,10 @@ class NumArray:
         self.tree = self.create_tree()
 
     def update(self, index, val):
-        self.fixtree(self.tree, index, val)
+        self.fix_tree(self.tree, index, val)
         return self.tree
 
-    def sumRange(self, left, right):
+    def sum_range(self, left, right):
         tree = self.tree
         left = len(tree) - self.len_nums2 + left
         right = len(tree) - self.len_nums2 + right
@@ -49,10 +50,9 @@ class NumArray:
             left -= k
         
         return tree
-    
 
-    def fixtree(self, tree, index, val):
-        element_ind = len(tree)- self.ind_nach - self.len_nums + index
+    def fix_tree(self, tree, index, val):
+        element_ind = len(tree) - self.ind_nach - self.len_nums + index
         difference = val - tree[element_ind]
         tek = element_ind // 2
         tree[element_ind] = val
