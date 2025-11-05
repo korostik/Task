@@ -2,7 +2,7 @@ count = 0
 height = 0
 def h(tree):
     global count
-    global ans
+    global height
     if tree:
         count += 1
         height = max(height, count)
