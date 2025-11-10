@@ -7,7 +7,7 @@
 
 
 
-def Rotation(tree): # текущий узел основного дерева, который подходит под условие балансировки малым левым вращением
+def Rotation(tree): # текущий узел основного дерева, который подходит под условие балансировки
     new_tree = Node(tree.right.left.val)
     c_left = tree.right.left.left
     c_right = tree.right.left.right
