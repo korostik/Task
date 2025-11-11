@@ -9,3 +9,4 @@ def h(tree):
         h(tree.left)
         h(tree.right)
         count -= 1
+#answer is the height
