@@ -8,6 +8,7 @@
 
 
 
+
 def Rotation(tree): # текущий узел основного дерева, который подходит под условие балансировки малым левым вращением
     b_left = tree.right.left
     tree.right.left = None
