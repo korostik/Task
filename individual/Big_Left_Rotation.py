@@ -8,7 +8,7 @@
 
 
 
-def Rotation(tree): # текущий узел основного дерева, который подходит под условие балансировки большим левым вращением
+def Big_Left_Rotation(tree): # текущий узел основного дерева, который подходит под условие балансировки большим левым вращением
     new_tree = Node(tree.right.left.val)
     c_left = tree.right.left.left
     c_right = tree.right.left.right

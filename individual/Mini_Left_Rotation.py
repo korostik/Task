@@ -9,7 +9,7 @@
 
 
 
-def Rotation(tree): # текущий узел основного дерева, который подходит под условие балансировки малым левым вращением
+def Mini_Left_Rotation(tree): # текущий узел основного дерева, который подходит под условие балансировки малым левым вращением
     b_left = tree.right.left
     tree.right.left = None
     a_right = tree.right
