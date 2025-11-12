@@ -33,4 +33,4 @@ def Big_Right_Rotation(tree): # текущий узел основного де�
 # tree.left.right = Node("c")
 # tree.left.right.right = Node("N")
 # tree.left.right.left = Node("M")
-# tree = Rotation(tree)
+# tree = Big_Right_Rotation(tree)

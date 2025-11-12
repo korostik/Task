@@ -27,4 +27,4 @@ def Mini_Right_Rotation(tree): # текущий узел основного де
 # tree.right = Node("R")
 # tree.left.right = Node("C")
 # tree.left.left = Node("L")
-# tree = Rotation(tree)
+# tree = Mini_Right_Rotation(tree)
