@@ -34,6 +34,7 @@ def Add(tree, value_new):
     
 
 def delete(tree, value):
+    #удалять корень эта функция не может
     #найти то что удаляем
     temp = tree
     while temp:
@@ -88,5 +89,4 @@ def delete(tree, value):
             return tree
         
     #находим в правом дереве самый левый элемент и переставляем его ребенка(если он есть) на место родителя а родителя на место удаляемого элемента
-    
-
+    #функция в файле find_root_minelement_in_right_tree

@@ -24,6 +24,7 @@ def Add(tree, value_new):
     else:
         temp.left = Node(value_new)
     return tree
+
 temp = Node()
 def f(tree):
     global temp
@@ -36,17 +37,17 @@ def f(tree):
         f(tree.right)
 
 
-tree = Node(6)
-tree = Add(tree, 3)
-tree = Add(tree, 5)
-tree = Add(tree, 8)
-tree = Add(tree, 7)
-tree = Add(tree, 9)
-tree = Add(tree, 2)
-tree = Add(tree, 4)
-tree = Add(tree, 1)
-tree = Add(tree, 10)
-tree = Add(tree, 11)
-tree = Add(tree, 0)
-f(tree.right)
-print(temp.val)
+# tree = Node(6)
+# tree = Add(tree, 3)
+# tree = Add(tree, 5)
+# tree = Add(tree, 8)
+# tree = Add(tree, 7)
+# tree = Add(tree, 9)
+# tree = Add(tree, 2)
+# tree = Add(tree, 4)
+# tree = Add(tree, 1)
+# tree = Add(tree, 10)
+# tree = Add(tree, 11)
+# tree = Add(tree, 0)
+# f(tree.right)
+# print(temp.val)
