@@ -93,18 +93,3 @@ def delete(tree, value):
             napr.right = napr.right.right
         elif pred.left.right != None:
             pred.left = pred.left.right
-
-tree = Tree(9)
-tree.left = Tree(3)
-tree.right = Tree(10)
-
-tree.left.left = Tree(1)
-tree.left.right = Tree(7)
-
-tree.left.right.left = Tree(5)
-tree.left.right.right = Tree(8)
-
-tree.left.right.left.left = Tree(6)
-
-delete(tree, 5)
-print(tree.left.right.left.val)
