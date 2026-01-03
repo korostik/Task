@@ -5,7 +5,7 @@
 
 
 
-class Node:
+class Tree:
     def __init__(self, value):
         self.right = None
         self.left = None
@@ -14,7 +14,7 @@ class Node:
 def Add(tree, value_new):
     temp = tree
     if tree == None:
-        return Node(value_new)
+        return Tree(value_new)
     while True:
         if value_new > temp.val:
             if temp.right:
@@ -27,11 +27,22 @@ def Add(tree, value_new):
             else:
                 break
     if value_new > temp.val:
-        temp.right = Node(value_new)
+        temp.right = Tree(value_new)
     else:
-        temp.left = Node(value_new)
+        temp.left = Tree(value_new)
     return tree
     
+def find_root_minelement_in_right_tree(temp):
+    ans = temp
+    pred = None
+    while temp:
+        if temp.left:
+            pred = temp
+            ans = temp.left
+            temp = temp.left
+        else:
+            temp = temp.right
+    return ans, pred
 
 def delete(tree, value):
     #удалять корень эта функция не может
@@ -46,47 +57,54 @@ def delete(tree, value):
             temp = temp.left
         else:
             if temp_before_val.left and temp_before_val.left.val == value:
-                napr = 'left'
+                napr = temp_before_val.left
             else:
-                napr = 'right'
+                napr = temp_before_val.right
             break
-    
-    
-    #если два ребенка Null, то делаем этот узел Null
-    if napr == 'right':
-        if temp_before_val.right.right == None and temp_before_val.right.left == None:
-            temp_before_val.right = None
-            return tree
-    if napr == 'left':
-        if temp_before_val.left.right == None and temp_before_val.left.left == None:
+        
+    #napr указывает на удаляемый элемент
+
+    # удаление листа
+    if napr.left == None and napr.right == None:
+        if temp_before_val.left == napr:
             temp_before_val.left = None
-            return tree
+        else:
+            temp_before_val.right = None
     
-    #если один ребенок Null, то передвигаем ребенка на место того, кого мы должны удалить
-    if napr == 'right':
-        if temp_before_val.right.right == None and temp_before_val.right.left != None:
-            n = temp_before_val.right.left
-            temp_before_val.right.left = None
-            temp_before_val.right = n
-            return tree
-        if temp_before_val.right.right != None and temp_before_val.right.left == None:
-            n = temp_before_val.right.right
-            temp_before_val.right.right = None
-            temp_before_val.right = n
-            return tree
-        
-    if napr == 'left':
-        if temp_before_val.left.right == None and temp_before_val.left.left != None:
-            n = temp_before_val.left.left
-            temp_before_val.left.left = None
-            temp_before_val.left = n
-            return tree
-        
-        if temp_before_val.left.right != None and temp_before_val.left.left == None:
-            n = temp_before_val.left.right
-            temp_before_val.left.right = None
-            temp_before_val.left = n
-            return tree
-        
-    #находим в правом дереве самый левый элемент и переставляем его ребенка(если он есть) на место родителя а родителя на место удаляемого элемента
-    #функция в файле find_root_minelement_in_right_tree
+    # удаление узла с одним ребенком
+    if napr.left == None and napr.right != None or napr.left != None and napr.right == None:
+        if temp_before_val.left == napr:
+            if napr.left != None:
+                temp_before_val.left = napr.left
+            else:
+                temp_before_val.left = napr.right
+        else:
+            if napr.left != None:
+                temp_before_val.right = napr.left
+            else:
+                temp_before_val.right = napr.right
+    
+    # удаление узла с двумя детьми
+    if napr.left != None and napr.right != None:
+        minelement_in_right_tree, pred = find_root_minelement_in_right_tree(napr.right)
+        napr.val = minelement_in_right_tree.val
+        if pred == None: #нет самого левого элемента в правом дереве
+            napr.val = minelement_in_right_tree.val
+            napr.right = napr.right.right
+        elif pred.left.right != None:
+            pred.left = pred.left.right
+
+tree = Tree(9)
+tree.left = Tree(3)
+tree.right = Tree(10)
+
+tree.left.left = Tree(1)
+tree.left.right = Tree(7)
+
+tree.left.right.left = Tree(5)
+tree.left.right.right = Tree(8)
+
+tree.left.right.left.left = Tree(6)
+
+delete(tree, 5)
+print(tree.left.right.left.val)
