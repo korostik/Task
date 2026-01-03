@@ -3,8 +3,6 @@
 # 2.  Удалить игрока из таблицы.
 # 3.  Найти место (ранг) игрока в таблице рейтинга. Место 1 — у игрока с наивысшим рейтингом.
 
-
-
 class Tree:
     def __init__(self, value):
         self.right = None
@@ -83,7 +81,7 @@ def delete(tree, value):
                 temp_before_val.right = napr.left
             else:
                 temp_before_val.right = napr.right
-    
+
     # удаление узла с двумя детьми
     if napr.left != None and napr.right != None:
         minelement_in_right_tree, pred = find_root_minelement_in_right_tree(napr.right)
@@ -93,3 +91,5 @@ def delete(tree, value):
             napr.right = napr.right.right
         elif pred.left.right != None:
             pred.left = pred.left.right
+
+#чтобы мы могли удалить корень дерева, нужно сделать корнем дерева число -1
