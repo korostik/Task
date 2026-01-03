@@ -79,8 +79,8 @@ class Solution:
                     del_ind = self.tree[left][2]
                 
             if right % 2 == 0:
-                if ans > self.tree[left][1]:
-                    ans = self.tree[left][1]
+                if ans > self.tree[right][1]:
+                    ans = self.tree[right][1]
                     del_ind = self.tree[right][2]
             
             left = (left + 1) // 2
