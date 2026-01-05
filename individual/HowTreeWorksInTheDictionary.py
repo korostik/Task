@@ -38,3 +38,14 @@ def get(tree, value):
         else:
             return temp.val[1]
     return "ERROR"
+
+
+# n = int(input())
+# tree = None
+# a = []
+# for i in range(n):
+#     print(a)
+#     x, y = map(int, input().split())
+#     a.append(x)
+#     tree = Add_and_Count(tree, x)
+#     print(get(tree, y))
