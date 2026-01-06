@@ -4,12 +4,12 @@ class Tree:
         self.left = None
         self.val = [key, value]
 
-def Add_and_Count(tree, key):
+def Add_and_Count(tree, key_new):
     temp = tree
     if tree == None:
-        return Tree(key)
+        return Tree(key_new)
     while True:
-        if key > temp.val[0]:
+        if key_new > temp.val[0]:
             if temp.right:
                 temp = temp.right
             else:
@@ -20,10 +20,10 @@ def Add_and_Count(tree, key):
             else:
                 break
 
-    if key > temp.val[0]:
-        temp.right = Tree(key)
-    elif key < temp.val[0]:
-        temp.left = Tree(key)
+    if key_new > temp.val[0]:
+        temp.right = Tree(key_new)
+    elif key_new < temp.val[0]:
+        temp.left = Tree(key_new)
     else:
         temp.val[1] += 1
     return tree
