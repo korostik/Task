@@ -16,15 +16,3 @@ def Mini_Right_Rotation(tree): # текущий узел основного де
     tree.left = b_right
     a_left.right = tree
     return a_left
-
-
-
-
-    
-
-# tree = Node("a")
-# tree.left = Node("b")
-# tree.right = Node("R")
-# tree.left.right = Node("C")
-# tree.left.left = Node("L")
-# tree = Mini_Right_Rotation(tree)
