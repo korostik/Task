@@ -38,7 +38,7 @@ class Dictionary:
                 temp = temp.left
             else:
                 return temp.value
-        return "ERROR"
+        return None
 
 
 # n = int(input())
